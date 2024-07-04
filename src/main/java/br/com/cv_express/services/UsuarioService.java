@@ -17,11 +17,11 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
-    public Usuario createUser(Usuario usuario) {
+    public Usuario create(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario getUser(String email) {
+    public Usuario getByEmail(String email) {
         return usuarioRepository.findByEmail(email).isPresent() ? usuarioRepository.findByEmail(email).get() : null;
     }
 }

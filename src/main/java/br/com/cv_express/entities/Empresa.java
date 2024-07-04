@@ -2,24 +2,15 @@ package br.com.cv_express.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-public class Empresa {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column(nullable = false)
-    private Date dataCadastro;
-
-    @Column(nullable = false)
-    private boolean ativo;
-
-    private String nome;
+public class Empresa extends Usuario{
 
     private String cnpj;
 
@@ -27,15 +18,11 @@ public class Empresa {
     private List<Vaga> vagas;
 
     public Empresa() {
-        this.dataCadastro = new Date();
-        this.ativo = true;
+        super();
     }
 
-    public Empresa(boolean ativo, String nome, String cnpj) {
-        this.dataCadastro = new Date();
-        this.ativo = true;
-        this.ativo = ativo;
-        this.nome = nome;
+    public Empresa(String nome, String telefone, String email,String cnpj, String senha) {
+        super(nome, telefone, email, senha);
         this.cnpj = cnpj;
     }
 }

@@ -31,7 +31,7 @@ public class UsuarioController {
 
     @PostMapping("/")
     public ResponseEntity<Usuario> createUser(UsuarioDto usuarioDto) {
-        return ResponseEntity.ok(usuarioService.createUser(usuarioDto.toUsuario()));
+        return ResponseEntity.ok(usuarioService.create(usuarioDto.toUsuario()));
     }
 
 }

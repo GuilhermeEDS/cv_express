@@ -1,5 +1,6 @@
 package br.com.cv_express.entities;
 
+import br.com.cv_express.enumerations.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,7 +9,6 @@ import java.util.Date;
 
 @Entity
 @Data
-@EqualsAndHashCode
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +27,8 @@ public class Usuario {
     private String telefone;
 
     private String senha;
+
+    private Role papel;
 
     public Usuario() {
         this.dataCadastro = new Date();

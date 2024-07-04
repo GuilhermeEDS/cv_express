@@ -1,5 +1,6 @@
 package br.com.cv_express.dtos;
 
+import br.com.cv_express.entities.Empresa;
 import br.com.cv_express.entities.Usuario;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -21,6 +22,8 @@ public class UsuarioDto {
     @NotEmpty(message = "Campo não pode ser vazio")
     private String senha;
 
+    private String cnpj;
+
     public Usuario toUsuario() {
         Usuario usuario = new Usuario();
 
@@ -30,6 +33,18 @@ public class UsuarioDto {
         usuario.setSenha(senha);
 
         return usuario;
+    }
+
+    public Empresa toEmpresa() {
+        Empresa empresa = new Empresa();
+
+        empresa.setNome(getNome());
+        empresa.setTelefone(getTelefone());
+        empresa.setEmail(getEmail());
+        empresa.setSenha(getSenha());
+        empresa.setCnpj(getCnpj());
+
+        return empresa;
     }
 }
 

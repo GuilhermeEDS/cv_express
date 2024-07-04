@@ -1,9 +1,11 @@
 package br.com.cv_express.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 
+@Data
 @Entity
 public class Submissao {
     @Id

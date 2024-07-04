@@ -6,7 +6,7 @@
 </head>
 <body>
 <form
-action="/" method="post" th:object="${usuarioDto}">
+        action="/empresa/" method="post" th:object="${usuarioDto}">
     <label class="label" for="nome">Nome completo</label>
     <input
             id="nome"
@@ -23,7 +23,7 @@ action="/" method="post" th:object="${usuarioDto}">
             th:field="*{email}"
             type="email"
     />
-    <label class="label" for="telefone">Nome completo</label>
+    <label class="label" for="telefone">telefone</label>
     <input
             id="telefone"
             class="input"
@@ -37,6 +37,14 @@ action="/" method="post" th:object="${usuarioDto}">
             class="input"
             placeholder="João da Silva"
             th:field="*{senha}"
+            type="text"
+    />
+    <label class="label" for="cnpj">Cnpj</label>
+    <input
+            id="cnpj"
+            class="input"
+            placeholder="João da Silva"
+            th:field="*{cnpj}"
             type="text"
     />
     <input type="submit" value="Cadastrar">

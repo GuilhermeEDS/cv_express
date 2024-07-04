@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Data
-@EqualsAndHashCode
 public class Vaga {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

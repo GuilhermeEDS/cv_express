@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Express</title>
+</head>
+<body>
+<form
+        action="/vaga/" method="post" th:object="${vagaDto}">
+    <label class="label" for="nome">Nome</label>
+    <input
+            id="nome"
+            class="input"
+            placeholder="João da Silva"
+            th:field="*{nome}"
+            type="text"
+    />
+    <label class="label" for="descricao">Descricao</label>
+    <input
+            id="descricao"
+            class="input"
+            placeholder="João da Silva"
+            th:field="*{descricao}"
+            type="email"
+    />
+    <input type="submit" value="Cadastrar">
+</form>
+</body>
+</html>
