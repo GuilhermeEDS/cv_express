@@ -18,21 +18,24 @@ public class Submissao {
     @Column(nullable = false)
     private boolean ativo;
 
-    @ManyToOne
-    private Usuario candidato;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Candidato candidato;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Vaga vaga;
+
+    private String observacao;
 
     public Submissao() {
         this.dataCadastro = new Date();
         this.ativo = true;
     }
 
-    public Submissao(Usuario candidato, Vaga vaga) {
-        this.candidato = candidato;
-        this.vaga = vaga;
+    public Submissao(Candidato candidato, Vaga vaga, String observacao) {
         this.dataCadastro = new Date();
         this.ativo = true;
+        this.candidato = candidato;
+        this.vaga = vaga;
+        this.observacao = observacao;
     }
 }

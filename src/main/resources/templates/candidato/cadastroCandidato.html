@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Express</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+</head>
+<body class="bg-primary">
+<div class="row">
+    <div class="col"></div>
+    <div class="col-12 col-lg-5">
+        <div class="card m-lg-5 p-lg-5">
+            <a href="/login"><i class="bi bi-arrow-left"></i></a>
+            <h1 class="title">
+                Cadastre-se
+            </h1>
+            <form action="/candidato/cadastro" method="post" enctype="multipart/form-data" th:object="${candidatoDto}">
+                <div class="mb-3">
+                    <label class="form-label" for="nome">Nome</label>
+                    <div class="input-group row">
+                        <span class="input-group-text col-1"></span>
+                        <input
+                                id="nome"
+                                class="input col"
+                                aria-describedby="basic-addon3 basic-addon4"
+                                th:field="*{nome}"
+                                type="text"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="email">E-mail</label>
+                    <div class="input-group row">
+                        <span class="input-group-text col-1">@</span>
+                        <input
+                                id="email"
+                                class="input col"
+                                aria-describedby="basic-addon3 basic-addon4"
+                                th:field="*{email}"
+                                type="email"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="email">Escolaridade</label>
+                    <div class="input-group row">
+                        <span class="input-group-text col-1"></span>
+                        <select
+                                class="input col"
+                                id="escolaridade"
+                                th:field="*{escolaridade}"
+                        >
+                            <option value="-1">
+                                Selecione sua escolaridade
+                            </option>
+                            <option
+                                    th:each="escolaridade : ${escolaridades}"
+                                    th:text="${escolaridade.getDescricao()}"
+                                    th:value="${escolaridade.ordinal()}"
+                            ></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="telefone">Telefone</label>
+                    <div class="input-group row">
+                        <span class="input-group-text col-1"></span>
+                        <input
+                                id="telefone"
+                                class="input col"
+                                aria-describedby="basic-addon3 basic-addon4"
+                                th:field="*{telefone}"
+                                type="text"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="senha">Currículo</label>
+                    <div class="input-group row">
+                        <span class="input-group-text col-1"></span>
+                        <input
+                                id="curriculo"
+                                class="input col"
+                                aria-describedby="basic-addon3 basic-addon4"
+                                th:field="*{curriculo}"
+                                type="file"
+                        />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="senha">Senha</label>
+                    <div class="input-group row">
+                        <span class="input-group-text col-1"></span>
+                        <input
+                                id="senha"
+                                class="input col"
+                                aria-describedby="basic-addon3 basic-addon4"
+                                th:field="*{senha}"
+                                type="password"
+                        />
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    <div class="mb-3 row text-center">
+                        <span>
+                            <span
+                            >Faz parte de uma empresa?</span
+                            >
+                            <a class="link" href="/empresa/cadastro">
+                                Registre-se aqui
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

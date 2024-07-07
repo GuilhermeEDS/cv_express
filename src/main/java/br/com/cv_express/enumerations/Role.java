@@ -2,11 +2,11 @@ package br.com.cv_express.enumerations;
 
 import lombok.Getter;
 
+@Getter
 public enum Role {
-    USUARIO("Usuario"),
+    CANDIDATO("Candidato"),
     EMPRESA("Empresa");
 
-    @Getter
     private final String descricao;
 
     Role(String descricao) {

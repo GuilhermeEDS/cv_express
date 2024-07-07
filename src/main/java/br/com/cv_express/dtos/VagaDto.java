@@ -16,6 +16,8 @@ public class VagaDto {
     @NotEmpty(message = "Campo não pode ser vazio")
     private String descricao;
 
+    private Long empresaId;
+
     public Vaga toVaga() {
         Vaga vaga = new Vaga();
 

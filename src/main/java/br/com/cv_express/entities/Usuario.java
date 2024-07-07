@@ -20,14 +20,16 @@ public class Usuario {
     @Column(nullable = false)
     private boolean ativo;
 
+    @Column(nullable = false)
     private String nome;
 
+    @Column(nullable = false)
     private String email;
 
-    private String telefone;
-
+    @Column(nullable = false)
     private String senha;
 
+    @Column(nullable = false)
     private Role papel;
 
     public Usuario() {
@@ -35,12 +37,12 @@ public class Usuario {
         this.ativo = true;
     }
 
-    public Usuario(String nome, String email, String telefone, String senha) {
+    public Usuario(String nome, String email, String senha, Role papel) {
         this.nome = nome;
         this.email = email;
-        this.telefone = telefone;
         this.senha = senha;
         this.dataCadastro = new Date();
         this.ativo = true;
+        this.papel = papel;
     }
 }

@@ -20,11 +20,8 @@ public class Vaga {
     @Column(nullable = false)
     private boolean ativo;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Empresa empresa;
-
-    @OneToMany
-    private List<Submissao> submissoes;
 
     private String nome;
 
