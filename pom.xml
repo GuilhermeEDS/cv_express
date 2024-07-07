@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>br.com</groupId>
 	<artifactId>cv_express</artifactId>
-	<version>1</version>
+	<version>0.0.1-SNAPSHOT
+	</version>
 	<name>cv_express</name>
 	<description>Plataforma para envio de currículos.</description>
 	<url/>
