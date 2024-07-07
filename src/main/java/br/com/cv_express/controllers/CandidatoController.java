@@ -70,7 +70,7 @@ public class CandidatoController {
         Candidato candidato = candidatoService.getByUsuarioId(usuario.getId());
         Vaga vaga = vagaService.getVaga(vagaId);
         model.addAttribute("candidatoId", candidato.getId());
-        model.addAttribute("vagaId", vaga.getId());
+        model.addAttribute("vaga", vaga);
         model.addAttribute("submissaoDto", submissaoDto);
         return "candidato/submissaoVaga";
     }

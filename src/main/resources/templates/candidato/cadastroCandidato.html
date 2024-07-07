@@ -13,9 +13,9 @@
 <body class="bg-primary">
 <div class="row">
     <div class="col"></div>
-    <div class="col-12 col-lg-5">
-        <div class="card m-lg-5 p-lg-5">
-            <a href="/login"><i class="bi bi-arrow-left"></i></a>
+    <div class="col-6">
+        <div class="card m-5 px-5 py-3">
+            <a href="/login"><i class="bi bi-arrow-left fs-2"></i></a>
             <h1 class="title">
                 Cadastre-se
             </h1>
@@ -26,7 +26,7 @@
                         <span class="input-group-text col-1"></span>
                         <input
                                 id="nome"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{nome}"
                                 type="text"
@@ -39,7 +39,7 @@
                         <span class="input-group-text col-1">@</span>
                         <input
                                 id="email"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{email}"
                                 type="email"
@@ -51,7 +51,7 @@
                     <div class="input-group row">
                         <span class="input-group-text col-1"></span>
                         <select
-                                class="input col"
+                                class="input form-control input-lg col"
                                 id="escolaridade"
                                 th:field="*{escolaridade}"
                         >
@@ -69,10 +69,10 @@
                 <div class="mb-3">
                     <label class="form-label" for="telefone">Telefone</label>
                     <div class="input-group row">
-                        <span class="input-group-text col-1"></span>
+                        <span class="input-group-text col-1"><i class="bi bi-telephone-fill"></i></span>
                         <input
                                 id="telefone"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{telefone}"
                                 type="text"
@@ -85,7 +85,7 @@
                         <span class="input-group-text col-1"></span>
                         <input
                                 id="curriculo"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{curriculo}"
                                 type="file"
@@ -95,19 +95,19 @@
                 <div class="mb-3">
                     <label class="form-label" for="senha">Senha</label>
                     <div class="input-group row">
-                        <span class="input-group-text col-1"></span>
+                        <span class="input-group-text col-1"><i class="bi bi-lock-fill"></i></span>
                         <input
                                 id="senha"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{senha}"
                                 type="password"
                         />
                     </div>
                 </div>
-                <div class="row">
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
-                    <div class="mb-3 row text-center">
+                <div class="mb-3 row px-5">
+                    <input type="submit" class="btn btn-primary fs-5 mb-1" value="Cadastrar">
+                    <div class="row text-center">
                         <span>
                             <span
                             >Faz parte de uma empresa?</span
@@ -121,6 +121,7 @@
             </form>
         </div>
     </div>
+    <div class="col"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

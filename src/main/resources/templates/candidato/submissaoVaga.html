@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>CV Express</title>
@@ -11,32 +11,36 @@
     />
 </head>
 <body class="bg-primary">
+<div class="text-end">
+    <a class="btn btn-light m-1" href="/logout"><i class="bi bi-box-arrow-left"></i></a>
+</div>
 <div class="row">
     <div class="col"></div>
     <div class="col-5">
-        <div class="card m-5 p-5">
-            <a href="/"><i class="bi bi-arrow-left"></i></a>
+        <div class="card m-5 px-5 py-3">
+            <a href="/"><i class="bi bi-arrow-left fs-2"></i></a>
             <h1 class="title">
                 Submeter Vaga
             </h1>
+            <h2 class="title" th:text="${vaga.getNome()}"></h2>
+            <p th:text="${vaga.getDescricao()}"></p>
             <form action="/candidato/submissao/" method="post" th:object="${submissaoDto}">
-                <input type="hidden" name="vagaId" th:value="${vagaId}"/>
+                <input type="hidden" name="vagaId" th:value="${vaga.getId()}"/>
                 <input type="hidden" name="candidatoId" th:value="${candidatoId}"/>
                 <div class="mb-3">
-                    <label class="form-label" for="nome">Nome</label>
+                    <label class="form-label" for="nome">Observações</label>
                     <div class="input-group row">
                         <span class="input-group-text col-1"></span>
-                        <input
+                        <textarea
                                 id="nome"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{observacao}"
-                                type="text"
-                        />
+                        ></textarea>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <input type="submit" class="btn btn-primary" value="Submeter">
+                <div class="mb-3 row px-5">
+                    <input type="submit" class="mb-1 btn btn-primary fs-5" value="Submeter">
                 </div>
             </form>
         </div>

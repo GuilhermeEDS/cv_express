@@ -11,11 +11,14 @@
     />
 </head>
 <body class="bg-primary">
+<div class="text-end">
+    <a class="btn btn-light m-1" href="/logout"><i class="bi bi-box-arrow-left"></i></a>
+</div>
 <div class="row">
     <div class="col"></div>
     <div class="col-5">
-        <div class="card m-5 p-5">
-            <a href="/"><i class="bi bi-arrow-left"></i></a>
+        <div class="card m-5 px-5 py-3">
+            <a href="/"><i class="bi bi-arrow-left fs-2"></i></a>
             <h1 class="title">
                 Cadastrar Vaga
             </h1>
@@ -27,7 +30,7 @@
                         <span class="input-group-text col-1"></span>
                         <input
                                 id="nome"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{nome}"
                                 type="text"
@@ -38,17 +41,16 @@
                     <label class="form-label" for="descricao">Descrição</label>
                     <div class="input-group row">
                         <span class="input-group-text col-1"></span>
-                        <input
+                        <textarea
                                 id="descricao"
-                                class="input col"
+                                class="input form-control input-lg col"
                                 aria-describedby="basic-addon3 basic-addon4"
                                 th:field="*{descricao}"
-                                type="text"
-                        />
+                        ></textarea>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                <div class="mb-3 row px-5">
+                    <input type="submit" class="mb-1 btn btn-primary fs-5" value="Cadastrar">
                 </div>
             </form>
         </div>

@@ -59,7 +59,7 @@ public class UsuarioController {
                 return "empresa/index";
             }
         }
-        return "index";
+        return "candidato/index";
     }
 
 }

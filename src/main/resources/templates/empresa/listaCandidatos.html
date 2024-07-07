@@ -11,24 +11,36 @@
     />
 </head>
 <body class="bg-primary">
+<div class="text-end">
+    <a class="btn btn-light m-1" href="/logout"><i class="bi bi-box-arrow-left"></i></a>
+</div>
 <div class="row">
     <div class="col"></div>
-    <div class="col-6">
-        <div class="card m-5 p-5">
-            <a class="btn btn-primary" href="empresa/vaga">Lista de Candidatos</a>
+    <div class="col-auto col-md-8 mx-auto">
+        <div class="card m-5 px-5 py-3">
+            <a href="/"><i class="fs-2 bi bi-arrow-left"></i></a>
+            <h1 class="title">
+                Lista de Candidatos
+            </h1>
             <table class="table">
                 <thead>
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
                     <th scope="col">Escolaridade</th>
+                    <th scope="col">Observações</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody class="table-group-divider">
                 <tr th:each="sub : ${submissoes}">
                     <td th:text="${sub.getCandidato().getUsuario().getNome()}"></td>
                     <td th:text="${sub.getCandidato().getUsuario().getEmail()}"></td>
-                    <td th:text="${sub.getCandidato().getEscolaridade().getDescricao()}"></td>
+                    <td th:text="${sub.getCandidato().getTelefone()}"></td>
+                    <td th:text="${sub.getCandidato().getEscolaridade()}"></td>
+                    <td th:text="${sub.getObservacao()}"></td>
+                    <td><a class="btn" about="baixar currículo" th:href="@{'~/empresa/download/' + ${sub.getCandidato().getId()}}"><i class="bi bi-download"></i></a></td>
                 </tr>
                 </tbody>
                 <tfoot>
