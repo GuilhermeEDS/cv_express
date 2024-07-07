@@ -33,9 +33,9 @@ import java.io.IOException;
 public class CandidatoController {
 
     @Autowired
-    CandidatoService candidatoService;
+    private CandidatoService candidatoService;
     @Autowired
-    UsuarioService usuarioService;
+    private UsuarioService usuarioService;
     @Autowired
     private VagaService vagaService;
     @Autowired
@@ -77,6 +77,18 @@ public class CandidatoController {
 
     @PostMapping("/submissao/")
     public RedirectView createSubmissao(final @Valid SubmissaoDto submissaoDto, @NonNull BindingResult result, Model model) throws IOException {
+        if (result.hasErrors()) {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String email = auth.getName();
+            Usuario usuario = usuarioService.getByEmail(email);
+            Candidato candidato = candidatoService.getByUsuarioId(usuario.getId());
+            Vaga vaga = vagaService.getVaga(submissaoDto.getVagaId());
+            model.addAttribute("candidatoId", candidato.getId());
+            model.addAttribute("vaga", vaga);
+            model.addAttribute("submissaoDto", submissaoDto);
+            return new RedirectView("/candidato/submissaoVaga", true);
+        }
+
         Vaga vaga = vagaService.getVaga(submissaoDto.getVagaId());
         Candidato candidato = candidatoService.getCandidato(submissaoDto.getCandidatoId());
         submissaoService.create(submissaoDto.toSubmissao(), candidato, vaga);
